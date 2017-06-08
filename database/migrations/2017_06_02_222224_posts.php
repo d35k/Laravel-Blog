@@ -14,12 +14,12 @@ class Posts extends Migration
     public function up()
     {
        Schema::create('posts', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('post_id');
             $table->string('title');
             $table->string('image');
             $table->string('url');
             $table->text('content');
-            $table->double('views');
+            $table->double('views')->default(0);
             $table->string('author');
             $table->timestamps();
         });
