@@ -22,7 +22,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ $item->created_at }}</span>
+                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ $item->created_at->toFormattedDateString() }}</span>
                         <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;{{ $item->author }}</span>
                         <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;{{ $item->views }}</span>
                     </div>
