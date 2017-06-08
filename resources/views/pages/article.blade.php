@@ -20,5 +20,41 @@
                         {!! $article->content !!}
                     </div>
                 </div>
+                @if($comments)
+                    <div class="blog-module shadow" style="box-shadow: 0 1px 8px #a6a6a6;">
+                        <fieldset class="layui-elem-field layui-field-title" style="margin-bottom:0">
+                            <legend>Write a Comment!</legend>
+                            <div class="layui-field-box">
+                                <form class="layui-form blog-editor" action="{{ url('a/' . $article->url . '/comment') }}" method="post">
+                                    {{ csrf_field() }}
+                                    <div class="layui-form-item">
+                                        <input name="author" type="text" class="layui-input" placeholder="There is your Name">
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <textarea name="comment" id="remarkEditor" placeholder="There is your Comment!" class="layui-textarea"></textarea>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <button class="layui-btn" lay-submit="formRemark" lay-filter="formRemark">Send my Comment</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </fieldset>
+                        <div class="blog-module-title">Comments</div>
+                        <ul class="blog-comment">
+                        @foreach($comments as $comment)
+                        <li>
+                            <div class="comment-parent">
+                                <div class="info">
+                                    <span class="username">{{ $comment->created_at->toFormattedDateString() }}</span>
+                                </div>
+                                <div class="content">
+                                    {{ $comment->content }}
+                                </div>
+                            </div>
+                        </li>
+                        @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
 @endsection
