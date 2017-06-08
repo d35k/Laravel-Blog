@@ -17,6 +17,8 @@ class MainController extends Controller
 	    $article = posts::where('url', $url)->first();
 	    //eğer yazı varsa yorumuyla beraber fırlatıyorum
 	    if($article->count()){
+	        //Yazıya tıklandığı için view'ini arttırıyorum.
+            posts::where('url', $url)->increment('views');
             //gelen yazının yorumunu alıyorum
             $comments = $article->comments;
             return view('pages.article', compact('article', 'comments'));
