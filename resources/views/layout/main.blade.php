@@ -49,7 +49,14 @@
                 <div class="blog-module shadow">
                     <div class="blog-module-title">Recently shared</div>
                     <ul class="fa-ul blog-module-ul">
-                        <li><i class="fa-li fa fa-hand-o-right"></i><a href="javascript:void(0)" target="_blank">Link</a></li>
+                        {{-- Son Paylaşılanlar için Post modeline bağlantı yapılıyor. --}}
+                    @php
+                        use App\posts;
+                    @endphp
+                        {{-- Son 10 post gösterilsin diye limit yapılıyor ve yazdırılıyor --}}
+                    @foreach (posts::limit(10)->orderBy('post_id', 'DESC')->get() as $item)
+                    <li><i class="fa-li fa fa-hand-o-right"></i><a href="{{ url('a/' . $item->url) }}" target="_blank">{{ $item->title }}</a></li>
+                    @endforeach
                     </ul>
                 </div>
             </div>
