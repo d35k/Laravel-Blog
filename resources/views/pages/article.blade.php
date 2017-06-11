@@ -41,11 +41,12 @@
                         </fieldset>
                         <div class="blog-module-title">Comments</div>
                         <ul class="blog-comment">
+                    @if($comments->count())
                         @foreach($comments as $comment)
                         <li>
                             <div class="comment-parent">
                                 <div class="info">
-                                    <span class="username">{{ $comment->created_at->toFormattedDateString() }}</span>
+                                    <span class="username">{{ $comment->author }},{{ $comment->created_at->toFormattedDateString() }}</span>
                                 </div>
                                 <div class="content">
                                     {{ $comment->content }}
@@ -53,6 +54,15 @@
                             </div>
                         </li>
                         @endforeach
+                    @else
+                        <li>
+                            <div class="comment-parent">
+                                <div class="content">
+                                    There is no new comment! Lets type a new one!
+                                </div>
+                            </div>
+                        </li>
+                    @endif
                         </ul>
                     </div>
                 @endif
