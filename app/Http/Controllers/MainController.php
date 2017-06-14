@@ -27,4 +27,10 @@ class MainController extends Controller
         //yoksa ana sayfaya dönücek :))
         return redirect('/');
     }
+
+    public function allPosts()
+    {
+        $posts = posts::get();
+        return view('pages.all', compact('posts'));
+    }
 }
