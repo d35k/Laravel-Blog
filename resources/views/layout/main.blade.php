@@ -54,9 +54,11 @@
                         use App\posts;
                     @endphp
                         {{-- Son 10 post gösterilsin diye limit yapılıyor ve yazdırılıyor --}}
-                    @foreach (posts::limit(10)->orderBy('post_id', 'DESC')->get() as $item)
+                    @forelse (posts::limit(10)->orderBy('post_id', 'DESC')->get() as $item)
                     <li><i class="fa-li fa fa-hand-o-right"></i><a href="{{ url('a/' . $item->url) }}" target="_blank">{{ $item->title }}</a></li>
-                    @endforeach
+                        @empty
+                        <li><i class="fa-li fa fa-times"></i>Nothing to show!</li>
+                    @endforelse
                     </ul>
                 </div>
             </div>
