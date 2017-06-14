@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', ' deneme ')
+@section('title', $article->title)
 
 @section('content')
     <div class="blog-container">
