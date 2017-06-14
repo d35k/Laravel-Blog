@@ -10,8 +10,9 @@ class MainController extends Controller
 	public function index()
 	{
 	    //Postları sondan-başa olarak 5'li olarak ayırıyorum ve ana sayfaya yolluyorum
-        $posts = posts::orderBy('post_id', 'DESC')->paginate(5);
+        $posts = posts::orderBy('post_id', 'DESC')->paginate(5);;
 		return view('pages.index', compact( 'posts'));
+
 	}
 	public function article($url = null){
         //Gelen yazının url'inden yazıyı buluyorum

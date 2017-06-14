@@ -7,7 +7,7 @@
 
             <div class="blog-main-left">
 
-                @foreach($posts as $item)
+                @forelse($posts as $item)
                 <div class="article shadow">
                     <div class="article-left">
                         <img src="{{ url($item->image) }}" alt="{{ $item->title }}"/>
@@ -27,7 +27,16 @@
                         <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;{{ $item->views }}</span>
                     </div>
                 </div>
-                @endforeach
+                    @empty
+                    <div class="article shadow">
+                        <div class="article-abstract">
+                            <p>
+                                There is no new post! just wait.
+                            </p>
+                        </div>
+                    </div>
+                @endforelse
+
                 {{ $posts->links() }}
             </div>
 
