@@ -12,6 +12,7 @@
 */
 //Ana Sayfa
 Route::get('/', 'MainController@index');
+Route::get('/allPosts', 'MainController@index')->name('allPosts');
 //Herhangi bir Post'a istek
 Route::get('/a/{articleUrl}', 'MainController@article');
 //Gelen Post'a yorum
