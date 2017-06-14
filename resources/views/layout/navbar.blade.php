@@ -9,7 +9,7 @@
                 <a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;Main Page</a>
             </li>
             <li class="layui-nav-item">
-                <a href="{{ route('allPosts') }}"><i class="fa fa-file-text fa-fw"></i>&nbsp;All Posts</a>
+                <a href="{{ route('allPost') }}"><i class="fa fa-file-text fa-fw"></i>&nbsp;All Posts</a>
             </li>
             <li class="layui-nav-item">
                 <a href="http://www.goktughatipoglu.com"><i class="fa fa-info fa-fw"></i>&nbsp;About Me</a>
