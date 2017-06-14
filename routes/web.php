@@ -17,3 +17,6 @@ Route::get('/allPosts', 'MainController@allPosts')->name('allPost');
 Route::get('/a/{articleUrl}', 'MainController@article');
 //Gelen Post'a yorum
 Route::post('/a/{articleUrl}/comment', 'CommentsController@post');
+
+//Yeni Post Ekleme
+Route::get('/new/post', 'NewPostController@form')->name('addNewPost');
