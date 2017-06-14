@@ -5,10 +5,10 @@
         </a>
         <a class="blog-logo" href="{{ route('index') }}">goktug/></a>
         <ul class="layui-nav" lay-filter="nav">
-            <li class="layui-nav-item {{ \App\Models\Helpers\Helper::classActiveRouteName('index') ? 'active' : '' }}">
+            <li class="layui-nav-item {{ \App\Models\Helpers\Helper::classActiveRouteName('index', 'layui-this' ) }}">
                 <a href="/"><i class="fa fa-home fa-fw"></i>&nbsp;Main Page</a>
             </li>
-            <li class="layui-nav-item {{ \App\Models\Helpers\Helper::classActiveRouteName('allPost') ? 'active' : '' }}">
+            <li class="layui-nav-item {{ \App\Models\Helpers\Helper::classActiveRouteName('allPost', 'layui-this') }}">
                 <a href="{{ route('allPost') }}"><i class="fa fa-file-text fa-fw"></i>&nbsp;All Posts</a>
             </li>
             <li class="layui-nav-item">

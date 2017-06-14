@@ -181,6 +181,11 @@ return [
          * Laravel Modification
          */
         Hootlex\Moderation\ModerationServiceProvider::class,
+
+        /*
+         * Laravel Permission
+         */
+        Spatie\Permission\PermissionServiceProvider::class,
     ],
 
     /*
