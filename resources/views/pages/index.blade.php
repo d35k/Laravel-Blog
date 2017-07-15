@@ -10,7 +10,7 @@
                 @forelse($posts as $item)
                 <div class="article shadow">
                     <div class="article-left">
-                        <img src="{{ url($item->image) }}" alt="{{ $item->title }}"/>
+                        <img src="{{ url($item->image) }}" alt="{{ $item->title }}'s image"/>
                     </div>
                     <div class="article-right">
                         <div class="article-title">
@@ -22,7 +22,7 @@
                     </div>
                     <div class="clear"></div>
                     <div class="article-footer">
-                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{ $item->created_at->toFormattedDateString() }}</span>
+                        <span><i class="fa fa-clock-o"></i>&nbsp;&nbsp;C {{ $item->created_at->toFormattedDateString() }} - U {{ $item->updated_at->toFormattedDateString() }}</span>
                         <span class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;{{ $item->author }}</span>
                         <span class="article-viewinfo"><i class="fa fa-eye"></i>&nbsp;{{ $item->views }}</span>
                     </div>

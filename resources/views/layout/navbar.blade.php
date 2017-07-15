@@ -11,9 +11,11 @@
             <li class="layui-nav-item {{ \App\Models\Helpers\Helper::classActiveRouteName('allPost', 'layui-this') }}">
                 <a href="{{ route('allPost') }}"><i class="fa fa-file-text fa-fw"></i>&nbsp;All Posts</a>
             </li>
+            @if(Auth::user())
             <li class="layui-nav-item {{ \App\Models\Helpers\Helper::classActiveRouteName('addNewPost', 'layui-this') }}">
                 <a href="{{ route('addNewPost') }}"><i class="fa fa-file-text fa-fw"></i>Add New Post</a>
             </li>
+            @endif
             <li class="layui-nav-item">
                 <a href="http://www.goktughatipoglu.com"><i class="fa fa-info fa-fw"></i>&nbsp;About Me</a>
             </li>
